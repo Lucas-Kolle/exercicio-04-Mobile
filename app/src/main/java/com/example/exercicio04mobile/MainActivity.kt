@@ -23,8 +23,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.exercicio04mobile.ui.theme.Exercicio04MobileTheme
 
 class MainActivity : ComponentActivity() {
@@ -56,15 +58,21 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.SpaceBetween
     ) {
 
-        Column() {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
 
             // Criando um componete de texto
             Text(
-                text = "Qual é a sua idade?"
+                text = "Qual é a sua idade?",
+                color = Color(71, 95, 190, 255),
+                fontSize = 30.sp,
+                fontWeight = FontWeight.SemiBold
             )
 
             Text(
-                text = "Aperte os botões para informar a sua idade."
+                text = "Aperte os botões para informar a sua idade.",
+                fontSize = 15.sp
             )
         }
 
