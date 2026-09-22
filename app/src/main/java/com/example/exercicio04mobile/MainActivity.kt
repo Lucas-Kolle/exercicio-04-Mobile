@@ -1,5 +1,6 @@
 package com.example.exercicio04mobile
 
+import android.R.attr.fontWeight
 import android.R.attr.name
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -53,7 +54,7 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
         modifier = modifier
             .background(Color(216, 217, 241, 255))
             .fillMaxSize()
-            .padding(0.dp, 200.dp),
+            .padding(0.dp, 215.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween
     ) {
@@ -79,7 +80,9 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
         // Criando uma linha
         Row() {
             Text(
-                text = "AQUI VAI FICAR A IDADE!!!"
+                text = "133",
+                fontSize = 40.sp,
+                fontWeight = FontWeight.Bold
             )
         }
 
