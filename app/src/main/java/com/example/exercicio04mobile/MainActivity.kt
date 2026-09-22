@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,9 +20,11 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.exercicio04mobile.ui.theme.Exercicio04MobileTheme
 
 class MainActivity : ComponentActivity() {
@@ -46,8 +49,11 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
     // Criando uma coluna
     Column(
         modifier = modifier
-            .background(Color.Yellow)
+            .background(Color(216, 217, 241, 255))
             .fillMaxSize()
+            .padding(0.dp, 200.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.SpaceBetween
     ) {
 
         Column() {
