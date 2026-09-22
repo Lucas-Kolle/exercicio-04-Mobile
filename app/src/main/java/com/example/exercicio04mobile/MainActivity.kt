@@ -59,7 +59,7 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
         modifier = modifier
             .background(Color(216, 217, 241, 255))
             .fillMaxSize()
-            .padding(0.dp, 215.dp),
+            .padding(0.dp, 200.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween
     ) {
@@ -142,7 +142,10 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
 
         Row() {
             Text(
-                text = "Você é CONDICIONAL de idade!"
+                text = "Você é CONDICIONAL de idade!",
+                color = Color(71, 95, 190, 255),
+                fontSize = 22.sp,
+                fontWeight = FontWeight.SemiBold
             )
         }
     }
