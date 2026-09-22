@@ -2,6 +2,7 @@ package com.example.exercicio04mobile
 
 import android.R.attr.fontWeight
 import android.R.attr.name
+import android.R.attr.text
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -61,6 +62,11 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
     // Estado para alterar a idade do usuário
     var idadeUsuario by remember {
         mutableStateOf(35)
+    }
+
+    // Estado para altera o status do usuário
+    var statusUsuario by remember {
+        mutableStateOf("ADULTO")
     }
 
     // Criando uma coluna
@@ -166,10 +172,24 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
         }
 
         Row() {
+
+            // Condicional para decidir o status do usuário
+            if (idadeUsuario < 12){
+                statusUsuario = "CRIANÇA"
+            }else if (idadeUsuario >= 50){
+                statusUsuario = "IDOSO"
+            }else if (idadeUsuario >= 18){
+                statusUsuario = "ADULTO"
+            }else if (idadeUsuario >= 14){
+                statusUsuario = "ADOLESCENTE"
+            }else {
+                statusUsuario = "SEI NÃO HEIN..."
+            }
+
             Text(
-                text = "Você é CONDICIONAL de idade!",
+                text = "Você está na faixa etária: ${statusUsuario}.",
                 color = Color(71, 95, 190, 255),
-                fontSize = 22.sp,
+                fontSize = 20.sp,
                 fontWeight = FontWeight.SemiBold
             )
         }
