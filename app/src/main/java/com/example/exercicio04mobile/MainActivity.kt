@@ -26,6 +26,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -53,6 +57,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PrimeiraTela(modifier: Modifier = Modifier) {
+
+    // Estado para alterar a idade do usuário
+    var idadeUsuario by remember {
+        mutableStateOf(35)
+    }
 
     // Criando uma coluna
     Column(
@@ -85,7 +94,7 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
         // Criando uma linha
         Row() {
             Text(
-                text = "133",
+                text = idadeUsuario.toString(),
                 fontSize = 40.sp,
                 fontWeight = FontWeight.Bold
             )
@@ -97,7 +106,15 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
 
             // Criando um botão
             Button(
-                onClick = {},
+                onClick = {
+
+                    if (idadeUsuario > 0){
+                        idadeUsuario--
+                    } else {
+                        idadeUsuario = 0
+                    }
+
+                },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(71, 95, 190, 255),
                     contentColor = Color.White
@@ -118,7 +135,15 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
             }
 
             Button(
-                onClick = {},
+                onClick = {
+
+                    if (idadeUsuario < 180){
+                        idadeUsuario++
+                    } else {
+                        idadeUsuario = 180
+                    }
+
+                },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(71, 95, 190, 255),
                     contentColor = Color.White
