@@ -11,12 +11,17 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -86,27 +91,50 @@ fun PrimeiraTela(modifier: Modifier = Modifier) {
             )
         }
 
-        Row() {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(15.dp) // "spacedBy" serve como um "gap"
+        ) {
 
             // Criando um botão
             Button(
-                onClick = {}
+                onClick = {},
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(71, 95, 190, 255),
+                    contentColor = Color.White
+                ),
+                modifier = Modifier
+                    .height(65.dp)
+                    .width(85.dp),
+                shape = RoundedCornerShape(8.dp)
+            ) {
+
+                // Criando um componente de ícones
+                Icon(
+                    imageVector = Icons.Default.KeyboardArrowDown,
+                    contentDescription = "Arrow Down Icon",
+                    modifier = Modifier
+                        .size(80.dp)
+                )
+            }
+
+            Button(
+                onClick = {},
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(71, 95, 190, 255),
+                    contentColor = Color.White
+                ),
+                modifier = Modifier
+                    .height(65.dp)
+                    .width(85.dp),
+                shape = RoundedCornerShape(8.dp)
             ) {
 
                 // Criando um componente de ícones
                 Icon(
                     imageVector = Icons.Default.KeyboardArrowUp,
-                    contentDescription = "Arrow Up Icon"
-                )
-            }
-
-            Button(
-                onClick = {}
-            ) {
-
-                Icon(
-                    imageVector = Icons.Default.KeyboardArrowDown,
-                    contentDescription = "Arrow Down Icon"
+                    contentDescription = "Arrow Up Icon",
+                    modifier = Modifier
+                        .size(80.dp)
                 )
             }
 
